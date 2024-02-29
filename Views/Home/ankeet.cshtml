@@ -1,0 +1,23 @@
+﻿@model kutse.Models.Guest
+@{
+    ViewBag.Title = "Ankeet";
+}
+
+<h2>Ankeet</h2>
+@using(Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <p>Siseta nimi: @Html.TextBoxFor(x=>x.Name)</p>
+    <p>Siseta email: @Html.TextBoxFor(x => x.Email)</p>
+    <p>Siseta tel: @Html.TextBoxFor(x => x.Phone)</p>
+    <p>
+        Sinu valik:
+        @Html.DropDownListFor(x=>x.WillAttend, new[]
+           {
+                new SelectListItem(){Text = "Tule kindlasti", Value=bool.TrueString},
+                new SelectListItem(){Text = "Kahjuks ei saa tulla", Value=bool.FalseString}
+           }, "Vaata siit")
+    </p>
+    <input type="submit" value="Saada vastus" />
+}
+

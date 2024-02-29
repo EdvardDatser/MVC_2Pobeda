@@ -1,0 +1,29 @@
+﻿@model kutse.Models.Guest
+@{
+    ViewBag.Title = "Thanks";
+}
+
+<h2>Thanks</h2>
+
+<div>
+    <p>Tänan sind, @Model.Name</p>
+</div>
+<div>
+    @if (Model.WillAttend == true)
+    {
+        @:Ootame sind kallis sõber!
+        <p>
+            <img src="~/Images/nice.png" alt="Alternate Text" />
+        </p>
+        <br />
+
+    }
+    else
+    {
+        @:Väga kurb uudis. Näeme hiljem!
+        <p>
+            <img src="~/Images/sad.png" alt="Alternate Text" />
+        </p>
+    }
+    @ViewBag.Message @* отчет об отправки письма *@
+</div>
